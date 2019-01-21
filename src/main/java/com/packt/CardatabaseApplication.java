@@ -31,11 +31,15 @@ public class CardatabaseApplication {
 			Owner owner2 = new Owner("Mary", "Robinson");
 			ownerRepository.save(owner1);
 			ownerRepository.save(owner2);
-			Car car = new Car("Ford", "Mustang", "Red", "ADF-1121", 2017, 59000, owner1);
+			Car car = new Car("Ford", "Mustang", "Red", "ADF-1121", 2017, 59000);
+			car.setOwner(owner1);
 			carRepository.save(car);
-			car = new Car("Maruti", "Swift", "Silver", "WB08C5984", 2016, 550000, owner2);
+			car = new Car("Maruti", "Swift", "Silver", "WB08C5984", 2016, 550000);
+			car.setOwner(owner2);
 			carRepository.save(car);
-			car = new Car("Maruti", "Alto", "Brick Red", "WB18A8948", 2010, 300000, owner2);
+			
+			car = new Car("Maruti", "Alto", "Brick Red", "WB18A8948", 2010, 300000);
+			car.setOwner(owner2);
 			carRepository.save(car);
 		};
 	}
